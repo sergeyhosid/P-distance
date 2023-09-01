@@ -30,3 +30,16 @@
 			arr[pos,i]=$i;
 	}
 }
+END{
+	if(numgene>=mingene)
+	{
+		sum=num=0
+		for(i=1;i<=pos;i++)
+			for(j=2;j<=i;j++)
+			{
+				sum+=arr[i,j];
+				num++;
+			}
+		print gene, sum/num, name, leneff, lenref, numgene;
+	}
+}
